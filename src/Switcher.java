@@ -107,6 +107,7 @@ ng v | grep 'Angular CLI:'
 
         exec("sudo", "rm", "-rf", "/usr/local/bin/node");
         exec("sudo", "rm", "-rf", "/usr/local/bin/npm");
+        exec("sudo", "rm", "-rf", "/usr/local/bin/npx");
         exec("sudo", "rm", "-rf", "/usr/local/bin/ng");
 
         System.out.println("Previous versions dropped.");
@@ -117,11 +118,14 @@ ng v | grep 'Angular CLI:'
 
         exec("sudo", "ln", "-s", "/usr/local/node-v" + nodeVersion + "-"+os+"-"+architecture+"/bin/node", "/usr/local/bin/node");
         exec("sudo", "ln", "-s", "/usr/local/node-v" + nodeVersion + "-"+os+"-"+architecture+"/bin/npm", "/usr/local/bin/npm");
+        exec("sudo", "ln", "-s", "/usr/local/node-v" + nodeVersion + "-"+os+"-"+architecture+"/bin/npx", "/usr/local/bin/npx");
 
         System.out.print("Global node version: ");
         exec("node", "-v");
         System.out.print("Global npm version: ");
         exec("npm", "-v");
+        System.out.print("Global npx version: ");
+        exec("npx", "-v");
 
         //---------change npm and ng version as per request ---------
 
